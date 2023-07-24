@@ -1,0 +1,56 @@
+.container {
+    width: 45.625rem; 
+    margin: 5rem auto 0 auto;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.created, .done {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.blue {
+    color: var(--blue);
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.purple {
+    color: var(--purple);
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.counter {
+    color: var(--gray-200);
+    font-size: 0.75rem;
+    font-weight: bold;
+    background-color: var(--gray-400);
+    width: 25px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 1.5rem;
+    border-top: 1px solid var(--gray-400);
+}
+
+.empty > img {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.bold {
+    font-weight: bold;
+}
