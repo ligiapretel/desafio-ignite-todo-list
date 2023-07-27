@@ -1,7 +1,8 @@
-import styles from './Tasks.module.css';
-import clipboard from '../assets/clipboard.svg';
+import styles from './TasksInfo.module.css';
+import { TaskEmpty } from './TaskEmpty';
+import { TaskCard } from './TaskCard';
 
-export function Tasks(){
+export function TasksInfo(){
     return(
         <div className={styles.container}>
             <div className={styles.info}>
@@ -14,11 +15,8 @@ export function Tasks(){
                     <span className={styles.counter}>0</span>
                 </div>
             </div>
-            <div className={styles.empty}>
-                <img src={clipboard} alt="Ícone de Clipboard" />
-                <p className={styles.bold}>Você ainda não tem tarefas cadastradas</p>
-                <p>Crie tarefas e organize seus itens a fazer</p>
-            </div>
+            {/* <TaskEmpty /> */}
+            <TaskCard />
         </div>
     )
 }
