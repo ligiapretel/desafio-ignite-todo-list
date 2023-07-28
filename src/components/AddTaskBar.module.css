@@ -41,3 +41,7 @@
 .container > button:hover {
     background-color: var(--blue);
 }
+
+.container > button:focus{
+    outline: 1px solid var(--gray-100);
+}

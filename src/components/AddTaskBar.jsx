@@ -4,33 +4,40 @@ import { TasksInfo } from './TasksInfo';
 import { TaskEmpty } from './TaskEmpty';
 import { TaskCard } from './TaskCard';
 import { v4 as uuidv4 } from 'uuid';
+import { useState } from 'react';
 
 export function AddTaskBar(){
-    const tasks = [
-        {
+    const [tasks, setTasks] = useState([]);
+
+    const [newTask, setNewTask] = useState('');
+
+    function handleCreateTask(e){
+        e.preventDefault();
+
+        const newTaskFormatted = {
             id: uuidv4(),
-            description: 'Velit blanditiis sequi minima quis minus',
+            description: newTask,
             isDone: false,
-        },
-        {
-            id: uuidv4(),
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, blanditiis sequi minima quis minus odio nobis maxime error quibusdam laudantium dolorem similique officia',
-            isDone: true,
-        },
-        {
-            id: uuidv4(),
-            description: 'Adipisicing elit minima dolorem',
-            isDone: true,
-        },
-    ]
+        }
+        
+        setTasks([...tasks,newTaskFormatted]);
+        
+        setNewTask('');
+    }
+
+    function handleNewTaskChange(e){
+        setNewTask(e.target.value);
+    }
 
     return(
             <>
-                <form className={styles.container}>
+                <form className={styles.container} onSubmit={handleCreateTask}>
                     <input 
                         type="text" 
                         placeholder="Adicione uma nova tarefa"
-                        />
+                        value={newTask}
+                        onChange={handleNewTaskChange}
+                    />
                     <button type='submit'>
                         Criar <PlusCircle size={16} weight="bold"/>
                     </button>
