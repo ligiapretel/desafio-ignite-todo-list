@@ -1,6 +1,4 @@
 import styles from './TasksInfo.module.css';
-import { TaskEmpty } from './TaskEmpty';
-import { TaskCard } from './TaskCard';
 
 export function TasksInfo(){
     return(
@@ -15,8 +13,6 @@ export function TasksInfo(){
                     <span className={styles.counter}>0</span>
                 </div>
             </div>
-            {/* <TaskEmpty /> */}
-            <TaskCard />
         </div>
     )
 }

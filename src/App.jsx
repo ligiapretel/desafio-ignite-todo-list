@@ -10,7 +10,6 @@ export function App() {
     <>
       <Header />
       <AddTaskBar />
-      <TasksInfo />
     </>
   )
 }
