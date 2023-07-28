@@ -16,6 +16,11 @@ export function AddTaskBar(){
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, blanditiis sequi minima quis minus odio nobis maxime error quibusdam laudantium dolorem similique officia',
             isDone: true,
         },
+        {
+            id: 3,
+            description: 'Adipisicing elit minima dolorem',
+            isDone: true,
+        },
     ]
 
     return(
@@ -39,6 +44,7 @@ export function AddTaskBar(){
                         <TaskCard 
                             key={item.id}
                             description={item.description}
+                            isDone={item.isDone}
                         />
                     ) 
                 }
