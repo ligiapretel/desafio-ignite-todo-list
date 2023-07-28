@@ -3,21 +3,22 @@ import { PlusCircle } from '@phosphor-icons/react';
 import { TasksInfo } from './TasksInfo';
 import { TaskEmpty } from './TaskEmpty';
 import { TaskCard } from './TaskCard';
+import { v4 as uuidv4 } from 'uuid';
 
 export function AddTaskBar(){
     const tasks = [
         {
-            id: 1,
+            id: uuidv4(),
             description: 'Velit blanditiis sequi minima quis minus',
             isDone: false,
         },
         {
-            id: 2,
+            id: uuidv4(),
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, blanditiis sequi minima quis minus odio nobis maxime error quibusdam laudantium dolorem similique officia',
             isDone: true,
         },
         {
-            id: 3,
+            id: uuidv4(),
             description: 'Adipisicing elit minima dolorem',
             isDone: true,
         },
