@@ -29,6 +29,12 @@ export function AddTaskBar(){
         setNewTask(e.target.value);
     }
 
+    function deleteTask(taskIdToDelete){
+        const tasksWithoutDeletedOne = tasks.filter(item=>item.id != taskIdToDelete);
+
+        setTasks(tasksWithoutDeletedOne);
+    }
+
     return(
             <>
                 <form className={styles.container} onSubmit={handleCreateTask}>
@@ -51,8 +57,10 @@ export function AddTaskBar(){
                     : tasks.map(item=>
                         <TaskCard 
                             key={item.id}
+                            id={item.id}
                             description={item.description}
                             isDone={item.isDone}
+                            onDeleteTask={deleteTask}
                         />
                     ) 
                 }
