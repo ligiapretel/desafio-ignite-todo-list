@@ -16,11 +16,27 @@
     flex-grow: 1;
 }
 
-.delete {
+.card > button {
+    border-radius: 4px;
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card > button:hover {
+    background-color: var(--gray-400);
+}
+
+.card .delete {
+    color: var(--gray-300);
     flex-shrink: 0;
 }
 
-.delete:hover {
+.card .delete:hover {
     color: var(--danger);
     cursor: pointer;
 }
