@@ -35,6 +35,8 @@ export function AddTaskBar(){
         setTasks(tasksWithoutDeletedOne);
     }
 
+    const isInputEmpty = newTask.length === 0 || !newTask.trim();
+
     return(
             <>
                 <form className={styles.container} onSubmit={handleCreateTask}>
@@ -44,7 +46,7 @@ export function AddTaskBar(){
                         value={newTask}
                         onChange={handleNewTaskChange}
                     />
-                    <button type='submit'>
+                    <button type='submit' disabled={isInputEmpty}>
                         Criar <PlusCircle size={16} weight="bold"/>
                     </button>
                 </form>

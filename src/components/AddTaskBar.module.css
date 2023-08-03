@@ -38,10 +38,14 @@
     transition: 0.2s;
 }
 
-.container > button:hover {
+.container > button:not([disabled]):hover {
     background-color: var(--blue);
 }
 
 .container > button:focus{
     outline: 1px solid var(--gray-100);
+}
+
+.container > button:disabled {
+    cursor: not-allowed;
 }
