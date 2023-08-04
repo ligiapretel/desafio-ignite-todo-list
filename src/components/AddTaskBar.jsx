@@ -51,7 +51,9 @@ export function AddTaskBar(){
                     </button>
                 </form>
 
-                <TasksInfo />
+                <TasksInfo 
+                    totalTasks={tasks.length}
+                />
                 
                 { 
                     tasks.length === 0 
