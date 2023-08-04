@@ -11,6 +11,8 @@ export function AddTaskBar(){
 
     const [newTask, setNewTask] = useState('');
 
+    const [doneTasks, setDoneTasks] = useState(0);
+
     function handleCreateTask(e){
         e.preventDefault();
 
@@ -35,6 +37,29 @@ export function AddTaskBar(){
         setTasks(tasksWithoutDeletedOne);
     }
 
+    function changeIsDone(taskId){
+        const taskToUpdate = tasks.filter(item=> {
+            item.id === taskId ? item.isDone = !item.isDone : null;
+        })
+
+        setTasks(tasks);
+        
+        sumDoneTasks();
+    }
+    
+    function sumDoneTasks(){
+
+        const allDoneTasks = tasks.reduce((total,item)=>{
+                if(item.isDone){
+                    return total + 1;
+                } 
+                return total;
+            },0);
+
+        setDoneTasks(allDoneTasks);
+        
+    }
+
     const isInputEmpty = newTask.length === 0 || !newTask.trim();
 
     return(
@@ -53,6 +78,7 @@ export function AddTaskBar(){
 
                 <TasksInfo 
                     totalTasks={tasks.length}
+                    totalDoneTasks={doneTasks}
                 />
                 
                 { 
@@ -65,6 +91,7 @@ export function AddTaskBar(){
                             description={item.description}
                             isDone={item.isDone}
                             onDeleteTask={deleteTask}
+                            onDoneTask={changeIsDone}
                         />
                     ) 
                 }

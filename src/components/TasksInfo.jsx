@@ -1,6 +1,6 @@
 import styles from './TasksInfo.module.css';
 
-export function TasksInfo({totalTasks}){
+export function TasksInfo({totalTasks, totalDoneTasks}){
     return(
         <div className={styles.container}>
             <div className={styles.info}>
@@ -10,7 +10,7 @@ export function TasksInfo({totalTasks}){
                 </div>
                 <div className={styles.done}>
                     <span className={styles.purple}>Concluídas</span>
-                    <span className={styles.counter}>0</span>
+                    <span className={styles.counter}>{totalDoneTasks}</span>
                 </div>
             </div>
         </div>
