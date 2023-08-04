@@ -10,7 +10,11 @@ export function TasksInfo({totalTasks, totalDoneTasks}){
                 </div>
                 <div className={styles.done}>
                     <span className={styles.purple}>Concluídas</span>
-                    <span className={styles.counter}>{totalDoneTasks}</span>
+                    {
+                        totalTasks === 0
+                        ? <span className={styles.counter}>{totalTasks}</span>
+                        : <span className={styles.counter}>{totalDoneTasks} de {totalTasks}</span>
+                    }
                 </div>
             </div>
         </div>
