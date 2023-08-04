@@ -4,7 +4,7 @@ import { TasksInfo } from './TasksInfo';
 import { TaskEmpty } from './TaskEmpty';
 import { TaskCard } from './TaskCard';
 import { v4 as uuidv4 } from 'uuid';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export function AddTaskBar(){
     const [tasks, setTasks] = useState([]);
@@ -12,6 +12,10 @@ export function AddTaskBar(){
     const [newTask, setNewTask] = useState('');
 
     const [doneTasks, setDoneTasks] = useState(0);
+
+    useEffect(()=>{
+        sumDoneTasks();
+    },[tasks]);
 
     function handleCreateTask(e){
         e.preventDefault();
@@ -56,8 +60,7 @@ export function AddTaskBar(){
                 return total;
             },0);
 
-        setDoneTasks(allDoneTasks);
-        
+        setDoneTasks(allDoneTasks);        
     }
 
     const isInputEmpty = newTask.length === 0 || !newTask.trim();
